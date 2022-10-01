@@ -1,8 +1,36 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "modules/styles_var/variables.scss";
+
+*{
+	font-family: 'Inter';
+}
+
+a{
+	color: $black;
+	transition: 0.3s;
+	&:hover{
+		color: $sky !important;
+	}
+}
+
+body{
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+}
+
+#root{
+	height: 100vh;
+}
+
+.App{
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	height: 100%;
+	background-color: $gray1;
+}
+
+.fs36{
+	font-size: 36px;
 }
