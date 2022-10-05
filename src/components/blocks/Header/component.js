@@ -2,7 +2,7 @@ import "./styles.scss";
 
 function Header() {
 	return (
-		<div className="header">
+		<div className="header center">
 			<div className="container">
 				<div className="header_content">
 					<a href="#" className="main_log"></a>

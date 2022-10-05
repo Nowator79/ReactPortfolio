@@ -9,8 +9,10 @@ import "./fonts/Inter/stylesheet.css";
 function App() {
 	return (
 	<div className="App">
-		<Header />
-		<MainBlock />
+		<div className='main_content'>
+			<Header />
+			<MainBlock />
+		</div>
 		<Footer />
 	</div>
 	);

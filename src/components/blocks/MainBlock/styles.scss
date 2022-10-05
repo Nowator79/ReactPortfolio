@@ -1,0 +1,43 @@
+@import "/src/modules/styles_var/variables.scss";
+
+.main_block{
+	.content{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.left_block{
+			padding: 180px 0;
+			.massage{
+				background: $sky;
+				border-radius: 15px 15px 15px 0px;
+				padding: 13px 24px;
+				color: $white;
+				font-weight: bold;
+				width: fit-content;
+			}
+			.name{
+				width: min-content;
+				line-height: 77px;
+				font-weight: bold;
+			}
+			.profesional{
+				margin-top: 30px;
+				color: $magic;
+				font-weight: bold;
+			}
+		}
+		.right_block
+		{
+			padding: 60px;
+
+			.cirsle_photo{
+				width: 500px;
+				height: 500px;
+				border-radius: 50%;
+				filter: drop-shadow(29px -11px 54px rgba(0, 173, 255, 0.47));
+				background-position: center;
+				background-size: cover;
+			}
+		}
+	}
+}
