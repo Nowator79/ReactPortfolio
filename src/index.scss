@@ -7,6 +7,7 @@
 a{
 	color: $black;
 	transition: 0.3s;
+	outline: none;
 	&:hover{
 		color: $sky !important;
 	}
@@ -28,10 +29,9 @@ body{
     flex-direction: column;
     justify-content: space-between;
 	height: 100%;
-	background-color: $gray1;
 	min-height: 100%;
 	.main_content{
-
+		background-color: $gray1;
 	}
 }
 .hw_full{
@@ -40,10 +40,40 @@ body{
 	min-width: 100%;
 	min-height: 100%;
 }
+.title_block{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+	margin-bottom: $block_margin_vertical;
+	h2{
+		font-size: 64px;
+		line-height: 77px;
+		font-weight: 700;
+		width: fit-content;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&::after{
+			content: "";
+			width: 100px;
+			height: 6px;
+			background: #000;
+		}
+	}
+}
+.mb_block{
+	margin-bottom: $block_margin_vertical;
+}
 .center{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+.fs24{
+	font-size: 24px;
 }
 .fs36{
 	font-size: 36px;
