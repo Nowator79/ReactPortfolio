@@ -1,4 +1,3 @@
-import "./styles.scss";
 import sobesed from './img/sobesed.svg';
 
 function AboutBlock() {

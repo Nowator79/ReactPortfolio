@@ -1,0 +1,92 @@
+
+
+$white_60p: #ffffff99;
+
+.card_post{
+	height: 425px;
+	border-radius: 15px;
+	background-color: $white;
+	width: 100%;
+	position: relative;
+	margin-bottom: 24px;
+	@media (min-width: 1200px) {
+		height: 380px;
+	}
+	.card_post__bg{
+		width: 100%;
+		height: 100%;
+		@each $lang, $color in $lang-colors {
+			&.#{$lang}{
+				background-color: $color;
+				&::before{
+					content: "#{map-get($lang-short_text, $lang)}";
+				}
+			}
+			
+		}
+		&::before{
+			font-weight: 700;
+			font-size: 64px;
+		}
+		@media (min-width: 1400px) {
+			&::before{
+				font-size: 115px;
+			}
+		}
+	}
+
+	.card_post__content{
+		position: absolute;
+		left: 0;
+		top:0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		.text{
+			padding: 40px 15px;
+			height: 100%;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: $white_60p;
+		}
+		.buttom_panel{
+			min-height: 80px;
+			background-color: $white;
+			display: flex;
+			@extend .border_r__bottom;
+			.like_block,
+			.comment_block{
+				display: flex;
+				align-items: center;
+				icon{
+					width: 25px;
+					height: 25px;
+					background-repeat: no-repeat;
+					background-size: contain;
+					background-position: center;
+					display: block;
+					margin-right: 8px;
+				}
+				count{
+					font-weight: 700;
+					font-size: 24px;
+					line-height: 29px;
+					color: $gray2;
+				}
+			}
+			.like_block{
+				icon{
+					background-image: url(img/like.svg);
+				}
+			}
+			.comment_block{
+				icon{
+					background-image: url(img/comment.svg);
+				}
+			}
+		}
+	}
+}

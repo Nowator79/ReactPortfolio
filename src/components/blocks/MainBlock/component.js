@@ -1,4 +1,3 @@
-import "./styles.scss";
 
 function MainBlock() {
 	return (

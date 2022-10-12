@@ -1,5 +1,13 @@
 @import "modules/styles_var/variables.scss";
 
+@import "components/blocks/AboutBlock/styles.scss";
+@import "components/blocks/ExperienceBlock/styles.scss";
+@import "components/blocks/Footer/styles.scss";
+@import "components/blocks/Header/styles.scss";
+@import "components/blocks/MainBlock/styles.scss";
+@import "components/cards/CardPost/styles.scss";
+@import "components/cards/CardPostList/styles.scss";
+
 *{
 	font-family: 'Inter';
 }
@@ -80,4 +88,16 @@ body{
 }
 .fs64{
 	font-size: 64px;
+}
+
+.border_r{
+	border-radius: 15px;
+}
+.border_r__top{
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+.border_r__bottom{
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
 }

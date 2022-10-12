@@ -7,5 +7,57 @@ $sky: #00ADFF;
 $magic: #5A2F69;
 
 $gray1: #F5F5F5;
+$gray2: #8B8B8B;
 
+$html5_color: #E54C21;
+$css3_color: #264DE4;
+$php7_color: #787CB4;
+$js_color: #F7E018;
+$jq_color: #B24926;
+$b_color: #7431F9;
+$sql_color: #0078D6;
+$bitrix_color: #D91935;
+$sass_color: #D75893;
+$node_color: #539E43;
+$git_color: #000000;
+$gulp_color: #CF4547;
+$react_color: #61DBFB;
+$redux_color: #7649BB;
+$angular_color: #D6002F;
+
+$lang-colors: (
+	html5: $html5_color, 
+	css3: $css3_color, 
+	php7: $php7_color,
+	js: $js_color, 
+	jq: $jq_color, 
+	b: $b_color,
+	sql: $sql_color,
+	bitrix: $bitrix_color, 
+	sass: $sass_color, 
+	node: $node_color, 
+	git: $git_color, 
+	gulp: $gulp_color, 
+	react: $react_color, 
+	redux: $redux_color, 
+	angular: $angular_color,
+);
+$lang-short_text: (
+	html5: "HTML", 
+	css3: "CSS", 
+	php7: "PHP",
+	js: "JS", 
+	jq: "JQ", 
+	b: "B",
+	sql: "SQL",
+	bitrix: "Bitrix", 
+	sass: "SASS", 
+	node: "Node", 
+	git: "Git", 
+	gulp: "Gulp", 
+	react: "React", 
+	redux: "Redux", 
+	angular: "Angular",
+);
 $block_margin_vertical: 80px;
+$border_radius: 15px;
