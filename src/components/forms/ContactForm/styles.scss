@@ -1,0 +1,20 @@
+.contact_form{
+	display: flex;
+	flex-direction: column;
+
+	input,
+	textarea{
+		margin-bottom: 15px;
+		border: unset;
+		outline: unset;
+		border-radius: 15px;
+		padding: 18px 15px;
+		font-size: 24px;
+	}
+	input{
+		height: 65px;
+	}
+	textarea{
+		resize: none;
+	}
+}

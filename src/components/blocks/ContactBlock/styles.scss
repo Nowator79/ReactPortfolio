@@ -1,0 +1,12 @@
+
+.contact_block{
+	padding-top: $block_margin_vertical;
+	padding-bottom: $block_margin_vertical;
+	background-color: $react_color;
+	h2{
+		color: $white;
+		&::after{
+			background: $white;
+		}
+	}
+}
