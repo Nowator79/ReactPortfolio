@@ -13,7 +13,7 @@ function App() {
 		{
 			"text": "С JavaScript столкнулся в 2019 году, работая фронтенд разработчиком.  С тех пор постоянно практикую в работе и совершенствую навыки. Изучил множество фреймворков.",
 			"type": "js",
-			"liks": 123,
+			"liks": 12,
 			"comments": 123,
 		},
 		{
@@ -35,6 +35,7 @@ function App() {
 			"comments": 123,
 		}
 	]
+	document.title = "Портфолио";
 	return (
 	<div className="App">
 		<div className='main_content'>
