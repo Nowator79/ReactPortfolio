@@ -61,7 +61,7 @@ $white_60p: #ffffff99;
 			.comment_block{
 				display: flex;
 				align-items: center;
-				icon{
+				.icon{
 					width: 25px;
 					height: 25px;
 					background-repeat: no-repeat;
@@ -70,7 +70,7 @@ $white_60p: #ffffff99;
 					display: block;
 					margin-right: 8px;
 				}
-				count{
+				.count{
 					font-weight: 700;
 					font-size: 24px;
 					line-height: 29px;
@@ -78,12 +78,21 @@ $white_60p: #ffffff99;
 				}
 			}
 			.like_block{
-				icon{
+				.icon{
 					background-image: url(img/like.svg);
+				}
+			
+				&.is-like{
+					.icon{
+						background-image: url(img/like_active.svg);
+					}
+					.count{
+						color: $red;
+					}
 				}
 			}
 			.comment_block{
-				icon{
+				.icon{
 					background-image: url(img/comment.svg);
 				}
 			}

@@ -10,9 +10,11 @@ class CardPostList extends React.Component{
 					{
 						this.props.listCard.map((element)=> (
 							<CardPost 
+								key={element.key}
 								text={element.text}
 								type={element.type}
 								liks={element.liks}
+								isLike={element.isLike}
 								comments={element.comments}
 							/>
 						)) 
