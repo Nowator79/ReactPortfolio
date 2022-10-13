@@ -49,12 +49,16 @@ function App() {
 	<div className="App">
 		<div className='main_content'>
 			<Header />
-			<MainBlock />
-			<AboutBlock />
+			<MainBlock 
+				name="NOVOSELOV VADIM" 
+				prof="React developer" 
+				photo="https://sun9-34.userapi.com/impg/6W409-JvdTXrlaNf78loy0_ROnc7AQQEDz-ifg/wH50evYqmyU.jpg?size=1620x2160&quality=95&sign=6b470bfddde9445f4c12a85c0c20814d&type=album"
+			/>
+			<AboutBlock title="ABOUT"/>
 			<ExperienceBlock title="Experience" list={listPost}/>
 			<ContactBlock title="Contact"/>
 		</div>
-		<Footer />
+		<Footer title="NOVOSELOV VADIM"/>
 	</div>
 	);
 }
