@@ -72,7 +72,17 @@ body{
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
 }
-
+.btn{
+	transition: 0.3s;
+	&.btn-blue{
+		background-color: $blue;
+		color: $blue1;
+		font-weight: bold;
+		&:hover{
+			background-color: $white;
+		}
+	}
+}
 @import "components/blocks/AboutBlock/styles.scss";
 @import "components/blocks/ExperienceBlock/styles.scss";
 @import "components/blocks/Footer/styles.scss";

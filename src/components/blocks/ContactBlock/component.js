@@ -9,7 +9,9 @@ class ContactBlock extends React.Component{
 				<div className="container">
 					<div>
 						<Title title={this.props.title}/>
-						<ContactForm />
+						<ContactForm 
+							action = {"http://localhost:3000/"}
+						/>
 					</div>
 				</div>
 			</div>
