@@ -1,10 +1,13 @@
 import React from 'react';
 class CardPost extends React.Component{
+
+
+
 	constructor(props) {
 		super(props);
 		let clone = Object.assign({}, props);
-
 		this.state = clone;
+
 	}
 	render() {
 		return (

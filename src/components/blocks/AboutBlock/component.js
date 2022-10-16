@@ -1,4 +1,5 @@
 import sobesed from './img/sobesed.svg';
+import Title from '../../Title/component';
 import React from 'react';
 
 class AboutBlock extends React.Component{
@@ -7,11 +8,8 @@ class AboutBlock extends React.Component{
 			<div className="about_block">
 				<div className="container">
 					<div>
-						<div className="title_block">
-							<h2>
-								{this.props.title}
-							</h2>
-						</div>
+						<Title title={this.props.title}/>
+
 						<div className="list_skills mb_block">
 							<div className="skill skill_html5">HTML5</div>
 							<div className="skill skill_css3">CSS3</div>

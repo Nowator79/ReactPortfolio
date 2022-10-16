@@ -1,0 +1,32 @@
+.title_block{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+	margin-bottom: $block_margin_vertical;
+	h2{
+		font-size: 64px;
+		line-height: 77px;
+		font-weight: 700;
+		width: fit-content;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&::after{
+			content: "";
+			width: 0px;
+			height: 6px;
+			background: #000;
+			transition: 0.3s;
+		}
+	}
+	&.active{
+		h2{
+			&::after{
+				width: 100px;
+			}
+		}
+	}
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactForm from '../../forms/ContactForm/component';
+import Title from '../../Title/component';
 
 class ContactBlock extends React.Component{
 	render() {
@@ -7,11 +8,7 @@ class ContactBlock extends React.Component{
 			<div className="contact_block">
 				<div className="container">
 					<div>
-						<div className="title_block">
-							<h2>
-								{this.props.title}
-							</h2>
-						</div>
+						<Title title={this.props.title}/>
 						<ContactForm />
 					</div>
 				</div>

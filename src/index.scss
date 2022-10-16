@@ -42,30 +42,7 @@ body{
 	min-width: 100%;
 	min-height: 100%;
 }
-.title_block{
-    width: 100%;
-    display: flex;
-    justify-content: center;
 
-	margin-bottom: $block_margin_vertical;
-	h2{
-		font-size: 64px;
-		line-height: 77px;
-		font-weight: 700;
-		width: fit-content;
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-
-		&::after{
-			content: "";
-			width: 100px;
-			height: 6px;
-			background: #000;
-		}
-	}
-}
 .mb_block{
 	margin-bottom: $block_margin_vertical;
 }
@@ -107,3 +84,5 @@ body{
 @import "components/cards/CardPostList/styles.scss";
 
 @import "components/forms/ContactForm/styles.scss";
+
+@import "components/Title/styles.scss";
