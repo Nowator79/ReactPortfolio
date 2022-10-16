@@ -21,6 +21,25 @@
 				margin-right: -70px;
 				.link{
 					margin-right: 70px;
+					position: relative;
+					&::after{
+						content: "";
+						width: 0%;
+						transition: 0.3s;
+						position: absolute;
+						height: 2px;
+						left: 50%;
+						bottom: 5px;
+						transform: translate(-50%);
+						background-color: $black;
+					}
+					&:hover{
+						&::after{
+							width: 100%;
+							background-color: $sky;
+						}
+					}
+					
 				}
 			}
 		}

@@ -2,7 +2,7 @@
 
 $white_60p: #ffffff99;
 
-.card_post{
+.card-post{
 	height: 425px;
 	border-radius: 15px;
 	background-color: $white;
@@ -57,7 +57,7 @@ $white_60p: #ffffff99;
 		}
 	}
 
-	.card_post__content{
+	.card-post__content{
 		position: absolute;
 		left: 0;
 		top:0;
@@ -74,13 +74,13 @@ $white_60p: #ffffff99;
 			justify-content: center;
 			background-color: $white_60p;
 		}
-		.buttom_panel{
+		.buttom-panel{
 			min-height: 80px;
 			background-color: $white;
 			display: flex;
 			@extend .border_r__bottom;
 			.like_block,
-			.comment_block{
+			.comment-block{
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -128,7 +128,7 @@ $white_60p: #ffffff99;
 					}
 				}
 			}
-			.comment_block{
+			.comment-block{
 				.icon{
 					background-image: url(img/comment.svg);
 				}

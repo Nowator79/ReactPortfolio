@@ -2,7 +2,7 @@ import React from 'react';
 class MainBlock extends React.Component{
 	render() {
 		return (
-			<div className="main_block">
+			<div className="main_block" ref={this.props.blockRef}>
 				<div className="container">
 					<div className="content">
 						<div className="left_block">
