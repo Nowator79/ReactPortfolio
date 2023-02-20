@@ -9,82 +9,102 @@ import ContactBlock from './components/blocks/ContactBlock/component';
 import Footer from './components/blocks/Footer/component';
 import './modules/bootstrap/scss/bootstrap.scss';
 import "./fonts/Inter/stylesheet.css";
+import me from "./img/novoselov_v.jpg";
 
 class App extends React.Component{
+
 	constructor(props)
 	{
 		super(props);
+		
 		this.MainBlock = React.createRef();
 		this.AboutBlock = React.createRef();
 		this.ExperienceBlock = React.createRef();
 		this.ContactBlock = React.createRef();
+
+		this.state = {
+			error: null,
+			isLoaded: false,
+			data: []
+		}
+	}
+	componentDidMount(){
+		let url = "http://radium-tech.ru:8000/getdata/";
+		fetch(url)
+		.then(res => res.json())
+		.then(
+			(result) => {
+				this.setState(
+					{
+						isLoaded: true,
+						data: result
+					}
+				);
+			},
+			(error) => {
+				this.setState({
+					isLoaded: true, 
+					error 
+				});
+			}
+		)
 	}
 	render() {
-		var listPost = [
-			{
-				"key": 1,
-				"text": "С JavaScript столкнулся в 2019 году, работая фронтенд разработчиком.  С тех пор постоянно практикую в работе и совершенствую навыки. Изучил множество фреймворков.",
-				"type": "js",
-				"liks": 12,
-				"isLike": true,
-				"comments": 123,
-			},
-			{
-				"key": 2,
-				"text": "С php столкнулся в 2019 году, работая фронтенд разработчиком.  С тех пор постоянно практикую в работе и совершенствую навыки. Изучил множество фреймворков.",
-				"type": "php7",
-				"liks": 123,
-				"isLike": false,
-				"comments": 123,
-			},
-			{
-				"key": 3,
-				"text": "С JavaScript столкнулся в 2019 году, работая фронтенд разработчиком.  С тех пор постоянно практикую в работе и совершенствую навыки. Изучил множество фреймворков.",
-				"type": "react",
-				"liks": 123,
-				"isLike": false,
-				"comments": 123,
-			},
-			{
-				"key": 4,
-				"text": "С JavaScript столкнулся в 2019 году, работая фронтенд разработчиком.  С тех пор постоянно практикую в работе и совершенствую навыки. Изучил множество фреймворков.",
-				"type": "sass",
-				"liks": 123,
-				"isLike": true,
-				"comments": 123,
-			}
-		]
+	
+	
 		document.title = "NOVOSELOV VADIM";
-		return (
-		<div className="App">
-			<div className='main_content'>
-				<Header 
-					mainRef={this.MainBlock}
-					aboutRef={this.AboutBlock}
-					experienceRef={this.ExperienceBlock}
-					contactRef={this.ContactBlock}
-				/>
-				<MainBlock 
-					blockRef={this.MainBlock}
-					name="NOVOSELOV VADIM" 
-					prof="React developer" 
-					photo="https://sun9-34.userapi.com/impg/6W409-JvdTXrlaNf78loy0_ROnc7AQQEDz-ifg/wH50evYqmyU.jpg?size=1620x2160&quality=95&sign=6b470bfddde9445f4c12a85c0c20814d&type=album"
-				/>
-				<AboutBlock 
-					blockRef={this.AboutBlock}
-					title="ABOUT"/>
-				<ExperienceBlock 
-					blockRef={this.ExperienceBlock}
-					title="Experience" 
-					list={listPost}/>
-				<ContactBlock 
-					blockRef={this.ContactBlock}
-					title="Contact"
-				/>
-			</div>
-			<Footer title="NOVOSELOV VADIM"/>
-		</div>
-		);
+		const {error, isLoaded, data} = this.state;
+		if(error){
+			return <p>Error {error.message}</p>
+		}else if(!isLoaded){
+			return <p>Loading....</p>
+		}else{
+			let listPost = [];
+
+			data.forEach((element) =>{
+				listPost[element.ID] = 
+				{
+					"key": element.ID,
+					"text": element.TEXT,
+					"type": element.TYPE,
+					"liks": element.LIKS,
+					"isLike": false,
+					"comments": 0,
+				}
+			});
+			return (
+				<div className="App">
+					<div className='main_content'>
+						<Header 
+							mainRef={this.MainBlock}
+							aboutRef={this.AboutBlock}
+							experienceRef={this.ExperienceBlock}
+							contactRef={this.ContactBlock}
+						/>
+						<MainBlock 
+							blockRef={this.MainBlock}
+							name="NOVOSELOV VADIM" 
+							prof="React developer" 
+							photo={me}
+						/>
+						<AboutBlock 
+							blockRef={this.AboutBlock}
+							title="ABOUT"/>
+						<ExperienceBlock 
+							blockRef={this.ExperienceBlock}
+							title="Experience" 
+							list={listPost}/>
+						<ContactBlock 
+							contactFormUrl={"https://localhost/"}
+							blockRef={this.ContactBlock}
+							title="Contact"
+						/>
+					</div>
+					<Footer phone="+79248475764" title="NOVOSELOV VADIM" mail="dfgbolshenet@gmail.com"/>
+				</div>
+				);
+		}
+
 	}
 }
 export default App;

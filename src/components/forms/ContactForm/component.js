@@ -37,7 +37,6 @@ class ContactForm extends React.Component{
 		
 		this.setState(clone);
 	}
-
 	submitForm(event){
 		event.preventDefault();
 		

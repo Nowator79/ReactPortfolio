@@ -1,46 +1,196 @@
-.header{
+.main-log{
+	background-image: url('/img/main_logo.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: calc(120px / 2);
+	height: calc(78px / 2);
+	@media (min-width: map-get($grid-breakpoints, md)) {
+	}
+	@media (min-width: map-get($grid-breakpoints, lg)) {
+	}
+	@media (min-width: map-get($grid-breakpoints, xl)) {
+		width: 120px;
+		height: 78px;
+	}
+}
+.list-href{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: -25px;
+	@media (min-width: map-get($grid-breakpoints, md)) {
+		flex-direction: row;
+		margin-right: -40px;
+		margin-bottom: 0;
+	}
+	@media (min-width: map-get($grid-breakpoints, lg)) {
+		margin-right: -50px;
+	}
+	@media (min-width: map-get($grid-breakpoints, xl)) {
+		margin-right: -70px;
+	}
+	.link{
+		margin-bottom: 25px;
+		width: min-content;
+		@media (min-width: map-get($grid-breakpoints, md)) {
+			margin-right: 40px;
+			margin-bottom: 0px;
+		}
+		@media (min-width: map-get($grid-breakpoints, lg)) {
+			margin-right: 50px;
+		}
+		@media (min-width: map-get($grid-breakpoints, xl)) {
+			margin-right: 70px;
+		}
+		position: relative;
+		&::after{
+			content: "";
+			width: 0%;
+			transition: 0.3s;
+			position: absolute;
+			height: 2px;
+			left: 50%;
+			bottom: 5px;
+			transform: translate(-50%);
+			background-color: $black;
+		}
+		&:hover{
+			&::after{
+				width: 100%;
+				background-color: $sky;
+			}
+		}
+		font-size: 24px;
+		@media (min-width: map-get($grid-breakpoints, md)) {
+			font-size: 24px;
+		}
+		@media (min-width: map-get($grid-breakpoints, lg)) {
+			font-size: 28px;
+		}
+		@media (min-width: map-get($grid-breakpoints, xl)) {
+			font-size: 36px;
+		}
+
+		text-align: center;
+		@media (min-width: map-get($grid-breakpoints, md)) {
+			text-align: left;
+
+		}
+
+	}
+}
+
+.padding-top{
+	display: block;
+	height: 90px;
+	@media (min-width: map-get($grid-breakpoints, md)) {
+		display: none;
+	}
+}
+.header-mobile{
 	background-color: $white;
 	box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.25);
-	min-height: 120px;
-	.container{
-		height: 100%;
-		.header_content{
-			height: 100%;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+	top: 0;
+	display: block;
+	.header-menu{
+		display: flex;
+		position: relative;
+		z-index: 5;
+		width: 100%;
+		background-color: $white;
+		@media (min-width: map-get($grid-breakpoints, md)) {
+			display: none;
+		}
+		align-items: center;
+		justify-content: left;
+		padding: 20px;
+		.tab{
+			width: 50px;
+			height: 50px;
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
-			.main_log{
-				background-image: url('/img/main_logo.svg');
-				background-size: contain;
-				background-repeat: no-repeat;
-				width: 120px;
-				height: 78px;
-			}
-			.list_href{
-				display: flex;
-				margin-right: -70px;
-				.link{
-					margin-right: 70px;
-					position: relative;
-					&::after{
-						content: "";
-						width: 0%;
-						transition: 0.3s;
-						position: absolute;
-						height: 2px;
-						left: 50%;
-						bottom: 5px;
-						transform: translate(-50%);
-						background-color: $black;
-					}
-					&:hover{
-						&::after{
-							width: 100%;
-							background-color: $sky;
-						}
-					}
-					
+			overflow: hidden;
+	
+			.tab-line{
+				background-color: $black;
+				width: 100%;
+				height: 3px;
+				position: relative;
+				transform: rotate(0deg);
+				transition: 0.3s;
+				&::after,
+				&::before{
+					content: "";
+					position: absolute;
+					background-color: $black;
+					width: 100%;
+					height: 3px;
+					transition: 0.3s;
+					transform: rotate(0deg);
+	
 				}
+				&::after{
+					bottom: -23px;
+				}
+				&::before{
+					top:-23px;
+				}
+			}
+	
+			&.active{
+	
+				.tab-line{
+					transform: rotate(135deg);
+	
+					&::after{
+						bottom: 0;
+						transform: rotate(-90deg);
+					}
+					&::before{
+						top: 0;
+					}
+				}
+			}
+		}
+	}
+	.header-modal{
+		position: absolute;
+		width: 100%;
+		background-color: #ffffff;
+		left: 0;
+		top: -500px;
+		transition: 0.3s;
+		padding: 90px 20px;
+		&.active{
+			top: 0;
+		}
+	}
+	@media (min-width: map-get($grid-breakpoints, md)) {
+		display: none;
+	}
+}
+.header{
+	display: none;
+}
+@media (min-width: map-get($grid-breakpoints, md)) {
+	.header{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $white;
+		box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.25);
+		min-height: 120px;
+		.header-container{
+			height: 100%;
+			.header-content{
+				height: 100%;
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
 			}
 		}
 	}

@@ -7,11 +7,10 @@ class CardPost extends React.Component{
 		super(props);
 		let clone = Object.assign({}, props);
 		this.state = clone;
-
 	}
 	render() {
 		return (
-			<div className="col col-lg-3 col-md-6">
+			<div className="col-12 col-lg-3 col-md-6">
 				<div  className="card-post">
 					<div className={this.state.type + " " + "card_post__bg border_r d-flex align-items-center justify-content-center"}></div>
 					<div className="card-post__content">

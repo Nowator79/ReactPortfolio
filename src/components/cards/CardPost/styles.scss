@@ -31,7 +31,7 @@ $white_60p: #ffffff99;
 		transform: rotateY(20deg) skewY(-2deg);
 		box-shadow: 12px 14px 8px 0px rgba(34, 60, 80, 0.2);
 	}
-	@media (min-width: 1200px) {
+	@media (min-width: map-get($grid-breakpoints, xl)) {
 		height: 380px;
 	}
 	.card_post__bg{
@@ -50,7 +50,7 @@ $white_60p: #ffffff99;
 			font-weight: 700;
 			font-size: 64px;
 		}
-		@media (min-width: 1400px) {
+		@media (min-width: map-get($grid-breakpoints, xxl)) {
 			&::before{
 				font-size: 115px;
 			}

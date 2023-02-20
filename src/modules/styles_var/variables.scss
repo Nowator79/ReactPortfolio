@@ -66,3 +66,12 @@ $lang-short_text: (
 );
 $block_margin_vertical: 80px;
 $border_radius: 15px;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+) !default;

@@ -5,12 +5,12 @@ import React from 'react';
 class AboutBlock extends React.Component{
 	render() {
 		return (
-			<div className="about_block" ref={this.props.blockRef}>
+			<div className="about_block" id="about" ref={this.props.blockRef}>
 				<div className="container">
 					<div>
 						<Title title={this.props.title}/>
 
-						<div className="list_skills mb_block">
+						<div className="list_skills">
 							<div className="skill skill_html5">HTML5</div>
 							<div className="skill skill_css3">CSS3</div>
 							<div className="skill skill_php7">PHP7</div>

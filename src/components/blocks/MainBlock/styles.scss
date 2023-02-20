@@ -1,10 +1,25 @@
 .main_block{
+	overflow: hidden;
+	background-image: url('/img/Bg.png');
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	.content{
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: space-between;
+		flex-direction: column-reverse;
+		@media (min-width: map-get($grid-breakpoints, md)) {
+			align-items: center;
+			flex-direction: row;
+		}
 		.left_block{
-			padding: 180px 0;
+			padding: 60px 0;
+			@media (min-width: map-get($grid-breakpoints, md)) {
+				padding: 180px 0;
+			}
 			.massage{
 				background: $sky;
 				border-radius: 15px 15px 15px 0px;
@@ -26,15 +41,34 @@
 		}
 		.right_block
 		{
-			padding: 60px;
-
+			padding: 30px;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			margin-top: 40px;
+			@media (min-width: map-get($grid-breakpoints, md)) {
+				width: auto;
+				margin-top: 0;
+			}
+			@media (min-width: map-get($grid-breakpoints, xl)) {
+				padding: 60px;
+			}
+			
 			.cirsle_photo{
-				width: 500px;
-				height: 500px;
+				width: 300px;
+				height: 300px;
 				border-radius: 50%;
 				filter: drop-shadow(29px -11px 54px rgba(0, 173, 255, 0.47));
 				background-position: center;
 				background-size: cover;
+				@media (min-width: map-get($grid-breakpoints, md)) {
+					width: 300px;
+					height: 300px;
+				}
+				@media (min-width: map-get($grid-breakpoints, xl)) {
+					width: 500px;
+					height: 500px;
+				}
 			}
 		}
 	}

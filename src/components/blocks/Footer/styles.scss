@@ -1,13 +1,39 @@
 .footer{
-	height: 100px;
 	background-color: $black;
 	color: $white;
 	font-size: 36px;
 	.content{
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-around;
 		padding-top: 23px;
 		padding-bottom: 23px;
+		flex-direction: column;
+		flex-wrap: wrap;
+
+		&>*{
+			width: 100%;
+			text-align: center;
+			color: $white;
+		}
+	}
+}
+@media (min-width: map-get($grid-breakpoints, lg)) {
+	.footer{
+		.content{
+			flex-direction: row;
+			&>*{
+				width: auto;
+			}
+		}
+	}
+}
+@media (min-width: map-get($grid-breakpoints, xxl)) {
+	.footer{
+		.content{
+			&>*{
+				width: calc(100% / 3);
+			}
+		}
 	}
 }

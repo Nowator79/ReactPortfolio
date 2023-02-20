@@ -4,7 +4,7 @@ import React from 'react';
 class ExperienceBlock extends React.Component{
 	render() {
 		return (
-			<div className="experience_block" ref={this.props.blockRef}>
+			<div className="experience_block" id="experience" ref={this.props.blockRef}>
 				<div className="container">
 					<div>
 						<Title title={this.props.title}/>

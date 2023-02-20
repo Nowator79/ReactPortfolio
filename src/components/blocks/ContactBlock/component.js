@@ -5,12 +5,12 @@ import Title from '../../Title/component';
 class ContactBlock extends React.Component{
 	render() {
 		return (
-			<div className="contact_block" ref={this.props.blockRef}>
+			<div className="contact-block" id="contact" ref={this.props.blockRef}>
 				<div className="container">
 					<div>
 						<Title title={this.props.title}/>
 						<ContactForm 
-							action = {"http://localhost:3000/"}
+							action = {this.props.contactFormUrl}
 						/>
 					</div>
 				</div>
